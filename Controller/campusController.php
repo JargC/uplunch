@@ -1,11 +1,9 @@
 <?php
 
-namespace Model;
-
-class Controller
+class campusController
 {
 	public function indexAction()
 	{
-		
+		require 'index.php';
 	}
 }

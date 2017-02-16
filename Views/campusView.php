@@ -1,4 +1,4 @@
-<?php $titre = 'Accueil'; ?>
+<?php $titre = 'Campus'; ?>
 
 <?php ob_start(); ?>
 	<div class="in-container">
