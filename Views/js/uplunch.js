@@ -1,5 +1,5 @@
 /**
-*@author Jean Clemenceau
+*
 *@brief Fonction attachée au bouton de connexion pour faire apparaître/disparaître la div correspondante suivant les actions de l'utilisateur
 **/
 function showLoginPanel(){
@@ -16,7 +16,7 @@ function showLoginPanel(){
 
 
 /**
-*@author Jean Clemenceau
+*
 *@brief Fonction attachée au bouton d'inscription du panel de connexion pour faire apparaître le panel du formulaire d'inscription
 **/
 function showInscriptionPanel(){
@@ -24,7 +24,7 @@ function showInscriptionPanel(){
 }
 
 /**
-*@author Jean Clemenceau
+*
 *@brief JQuery gérant la disparition des panels de connexion et d'inscription si l'utilisateur clique sur autre part sur la page
 **/
 $(document).ready(function(){
@@ -46,4 +46,13 @@ $(document).ready(function(){
     event.stopPropagation();
   }); 
  
+
+ $( ".logo-parameter" ).click(function() {
+		if($( ".list-parameter" ).css("display")=="none"){
+			$( ".list-parameter" ).css("display","block");
+		}
+		else{
+			$( ".list-parameter" ).css("display","none");
+		}
+	});
 });
