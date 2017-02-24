@@ -17,6 +17,12 @@ a:hover,a:focus{
     margin: 100px auto -145px;   
 }
 
+.login-panel{
+	z-index: 2;
+	position: absolute;
+	margin-top: 5%;
+}
+
 .header-title-container{
 	overflow: hidden;
 	margin: 0;
