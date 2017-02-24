@@ -1,3 +1,18 @@
+<?php
+// Je recupere la saisie dans la session si necessaire
+if(isset($_SESSION['saisie'])){
+    $saisie = $_SESSION['saisie'];
+    var_dump($saisie);
+//    unset($_SESSION['saisie']);
+}
+// Je recupere le tableau des erreurs si necessaire
+if(isset($_SESSION['erreur'])){
+    $erreur = $_SESSION['erreur'];
+    var_dump($erreur);
+//    unset($_SESSION['erreur']);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +44,7 @@
 							</a>
 						</div>
 						<div class="user-element-container">
-							<a href="./login.php" class="logo-user-link">
+							<a id="loginButton" onclick="showLoginPanel()" class="logo-user-link">
 								<span class="logo-user">
 								</span>
 							</a>											
@@ -44,6 +59,52 @@
 					<a href="favoris.php" class="link-nav"><span>Favoris</span></a>					
 				</div>
 			</div>
+		</div>
+
+	
+		<div style="display:none" id="loginPanel" class="panel panel-default col-xs-4 col-xs-offset-4 col-md-4 col-md-offset-4 login-panel">
+  			<div class="panel-heading">
+   			 <h2 class="panel-title">Connexion</h2>
+  			</div>
+	  		<div class="panel-body">
+	    		<form action="../Controller/userController.php?method=connexion" method="post">
+					<label style="color:grey"> Adresse e-mail </label>
+					<input class="form-control" type="text" name="mail">
+					<br>
+					<label style="color:grey"> Mot de passe </label>
+					<input class="form-control" type="password" name="password">
+					<br>
+					<input id="inscriptionButton" class="btn btn-default" type="submit" value="Se connecter">
+	    		</form>
+	    		<br>
+	    		<button onclick="showInscriptionPanel()" class="btn btn-default">S'inscrire</button>
+	 	    </div>
+		</div>
+
+		<div style="display:none" id="inscriptionPanel" class="panel panel-default col-xs-4 col-xs-offset-4 col-md-4 col-md-offset-4 login-panel">
+  			<div class="panel-heading">
+   			 <h2 class="panel-title">Inscription</h2>
+  			</div>
+	  		<div class="panel-body">
+	    		<form action="../Controller/userController.php?method=inscription" method="post">
+	    			<label style="color:grey"> Nom </label>
+					<input class="form-control" type="text" name="nom">
+					<label style="color:grey"> Prénom </label>
+					<input class="form-control" type="text" name="prenom">
+					<label style="color:grey"> Adresse </label>
+					<input class="form-control" type="text" name="adresse">
+					<label style="color:grey"> Filiere </label>
+					<input class="form-control" type="text" name="filiere">
+					<label style="color:grey"> Photo </label>
+					<input class="form-control" type="file" accept="image/*" name="photo">
+					<label style="color:grey"> Adresse e-mail *</label>
+					<input class="form-control" type="text" name="mail">
+					<label style="color:grey"> Mot de passe *</label>
+					<input class="form-control" type="password" name="password">
+					<br>
+					<input class="btn btn-default" type="submit" value="S'inscrire">
+	    		</form>
+	 	    </div>
 		</div>
 		<div class="list-parameter">
 			<div class="element-parameter"><a href="">Retour page d'accueil</a></div>
@@ -87,5 +148,6 @@
 		</div>
 	</div>
 	
+
 </body>
 </html>
