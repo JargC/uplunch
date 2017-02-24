@@ -65,15 +65,14 @@ require_once '../Model/User.php';
 
          // Controle du mail
         $mot = 'mail';
-        if(recupPostParam($mot)!=''){
             if ($user ->setMail(recupPostParam($mot))) {
             $saisie[$mot] = $user->getMail();               
             }
-        } else {
+            else {
             $saisie[$mot] = $_POST[$mot];
 			$erreur[$mot] = TRUE;
 			$isOk = FALSE;
-        } 
+            } 
 
 
          // Controle du mdp

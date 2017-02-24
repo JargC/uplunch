@@ -107,15 +107,16 @@ class User extends Model
         return TRUE;
     }
 
-    public function setmail($mail) {
+    public function setMail($mail) {
     	$exp = '/^[[:alnum:]][[:alnum:]_.-]*@[[:alnum:]][[:alnum:]_.-]*\.[a-z]{2,6}$/';
         // J'elimine les blancs avant et apres et je passe en minuscules
         $mail = strtolower(trim($mail));
         // Je controle que le mail est valide
-        if( preg_match($exp,$mail) )
+        if( preg_match($exp,$mail) ){
             $this->mail = $mail; 
-
-        return TRUE;
+        	return TRUE;
+        }
+        else return FALSE;
     }
 
     public function setPassword($password) {
