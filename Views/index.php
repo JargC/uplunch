@@ -2,8 +2,6 @@
 
 // Chargement de la classe de modele generique
 require('../core/Model.php');
-// Chargement de la classe de controller generique
-require('../core/Controller.php');
 
 ?>
 
