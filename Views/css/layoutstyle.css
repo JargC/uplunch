@@ -115,7 +115,8 @@ a:hover,a:focus{
 }
 
 .footer{
-	min-width: 850px;
+	height: auto !important;
+	margin: 100px auto -145px;
 }
 
 .footer-container{
@@ -178,6 +179,7 @@ a:hover,a:focus{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     min-width:750px;
+    min-height:300px;
     margin-bottom: 10px;
     display: flex;
 }
@@ -190,6 +192,28 @@ a:hover,a:focus{
     box-sizing: border-box;
     min-width:750px;
     min-height:300px;
+    margin-bottom: 195px;
+    display: flex;
+}
+
+.in-list-container{
+	font: 18px arial,sans-serif;
+	background: #F2A079;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width:750px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.out-list-container{
+	font: 18px arial,sans-serif;
+	background: #C8E1B8;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width:750px;
     margin-bottom: 195px;
     display: flex;
 }
@@ -266,6 +290,7 @@ a:hover,a:focus{
 	background-color: white;
 	color:black;
 	margin-bottom: 10px;
+	border-radius: 32px;
 }
 
 .picture{

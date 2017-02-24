@@ -1,7 +1,7 @@
 <?php $titre = 'Campus'; ?>
 
 <?php ob_start(); ?>
-	<div class="in-container">
+	<div class="in-list-container">
 		<div class="search-container">
 		</div>
 		<div class="path">
