@@ -35,8 +35,7 @@
 							</a>											
 						</div>
 						<div class="header-title-container">
-							<span class="header-title">UP-LUNCH
-							</span>					
+							<span class="header-title">UP-LUNCH</span>					
 						</div>					
 					</div>
 				</div>				

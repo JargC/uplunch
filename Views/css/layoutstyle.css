@@ -172,7 +172,6 @@ a:hover,a:focus{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     min-width:750px;
-    min-height:300px;
     margin-bottom: 10px;
     display: flex;
 }
@@ -254,19 +253,25 @@ a:hover,a:focus{
 }
 
 .list-restaurant-container{
-	
+	padding: 26px 26px 16px 26px;
 }
 
 .restaurant-container{
-	
+	background-color: white;
+	color:black;
+	margin-bottom: 10px;
 }
 
 .picture{
-	
+	width: 266px;
+    margin: 30px;
 }
 
 .description-restaurant{
-	
+	display: inline-block;
+    vertical-align: top;
+    font-size: x-large;
+    margin-top: 34px;
 }
 
 .restaurant-name{
@@ -281,10 +286,12 @@ a:hover,a:focus{
 	
 }
 
-.restaurant-affluence{
-	
+.go-validation{
+	background-color: #C55D2F ;
+	margin-left: 42px;
+    margin-right: 20px;
 }
 
-.go-validation{
+.restaurant-affluence{
 	
 }
