@@ -206,3 +206,85 @@ a:hover,a:focus{
 	box-shadow: 4px 4px 0px #aaa; 
 	border-radius:33px;
 }
+
+.list-parameter{
+	margin-top: -10px;
+    width: 200px;
+    height: 180px;
+    background-color: #C55D2F;
+    position:absolute;
+    padding-top: 10px;
+    text-align: center;
+    display:none;
+}
+
+.element-parameter{
+	background-color: #833C1C;
+	text-align: center;
+	margin-bottom: 4px;
+	
+}
+
+.fb-contact{
+	background : no-repeat url("./images/logo-fb.png") ;
+	display: block;
+	position: absolute;
+	height: 32px;
+    width: 32px;
+    margin-top: 9px;
+    margin-left: 52px;
+}
+
+.gm-contact{
+	background : no-repeat url("./images/logo-gmail.png") ;
+	display:block;
+	position: absolute;
+	height: 32px;
+    width: 42px;
+    margin-top: 8px;
+    margin-left: 110px;
+}
+
+.search-container{
+	
+}
+
+.path{
+	
+}
+
+.list-restaurant-container{
+	
+}
+
+.restaurant-container{
+	
+}
+
+.picture{
+	
+}
+
+.description-restaurant{
+	
+}
+
+.restaurant-name{
+	
+}
+
+.horaire{
+	
+}
+
+.restaurant-keyword{
+	
+}
+
+.restaurant-affluence{
+	
+}
+
+.go-validation{
+	
+}

@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 	<div class="in-container">
-		<a href="" class="in-link">Déjeuner au campus
+		<a href="../Controller/campusController.php" class="in-link">Déjeuner au campus
 		</a>
 	</div>
 	<div class="out-container">
@@ -10,4 +10,4 @@
 		</a>
 	</div>
 <?php $contenu = ob_get_clean(); ?>
-<?php require 'Views/layout.php'; ?>
+<?php require 'layout.php'; ?>

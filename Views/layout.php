@@ -3,16 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/x-icon" href=".png" />
-	<link rel="stylesheet" href="./Views/css/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="./Views/css/layoutstyle.css" type="text/css" />
-	<link rel="stylesheet" href="./Views/css/jquery-ui.min.css" type="text/css" />	
-	<script src="./Views/js/jquery-1.12.1.min.js" async defer></script>	
-	<script src="./Views/js/jquery-ui.min.js" async defer></script>
-	<script src="./Views/js/bootstrap.min.js" async defer></script>
+	<link rel="stylesheet" href="../Views/css/jquery-ui.min.css" type="text/css" />
+	<link rel="stylesheet" href="../Views/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="../Views/css/layoutstyle.css" type="text/css" />
+	<script src="../Views/js/jquery-ui.min.js" ></script>
+	<script src="../Views/js/jquery-1.12.1.min.js" ></script>	
+	<script src="../Views/js/bootstrap.min.js" ></script>
+	<script src="../Views/js/uplunch.js" ></script>
 	<title><?= $titre ?></title>
 </head>
 <body>
-	
+ 
 	<div id="wrap">
 		
 		<!-- Header -->
@@ -22,7 +23,7 @@
 				<div class="top-header-container">
 					<div class="element-top-header-container">
 						<div class="logo-container">
-							<a href="./parameter.php" class="logo-parameter-link">	
+							<a class="logo-parameter-link">	
 								<span class="logo-parameter">
 								</span>
 							</a>
@@ -40,10 +41,19 @@
 					</div>
 				</div>				
 				<div class="nav-container">
-					<a href="./index.php" class="link-nav"><span>Accueil</span></a>
-					<a href="./favoris.php" class="link-nav"><span>Favoris</span></a>					
+					<a href="../Controller/indexController.php" class="link-nav"><span>Accueil</span></a>
+					<a href="favoris.php" class="link-nav"><span>Favoris</span></a>					
 				</div>
 			</div>
+		</div>
+		<div class="list-parameter">
+			<div class="element-parameter"><a href="">Retour page d'accueil</a></div>
+			<div class="element-parameter"><a href="">Mes favoris</a></div>
+			<div class="element-parameter"><a href="">Qui sommes nous?</a></div>
+			<div class="element-parameter"><a href="">Conditions d'utilisations</a></div>
+			<span>Nous contacter</span>
+			<a class="fb-contact" href=""></a>
+			<a class="gm-contact" href=""></a>
 		</div>
 		
 		<!-- Content -->

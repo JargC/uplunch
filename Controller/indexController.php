@@ -1,8 +1,7 @@
 <?php
 
-	require 'Restaurant.php';
-	
-	$restaurant = getRestaurantCampus();
-	
-	require 'campus.php';
+namespace Controller;
+
+require '../Views/index.php';
+
 	

@@ -1,9 +1,37 @@
 <?php
 
-function getRestaurantCampus() {
-	$bdd = new PDO('mysql:host=localhost;dbname=monblog;charset=utf8', 'root', '');
-	$billets = $bdd->query('select BIL_ID as id, BIL_DATE as date,'
-			. ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-			. ' order by BIL_ID desc');
-	return $billets;
+namespace Model;
+
+use Model\Restaurant;
+use Model\HoraireRepository;
+ 
+class RestaurantRepository
+{
+
+	public function getRestaurantCampus() {
+		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', 'root');
+		$results = $bdd->query('select * from restaurant where localisation="in" ');
+
+		$restaurants = new \ArrayObject();
+		$repoHoraire = new HoraireRepository();
+		while ($res = $results->fetch()) {			
+			$restaurant = new Restaurant();
+			$restaurant->setNom($res['nom']);
+			$restaurant->setAdresse($res['adresse']);
+			$restaurant->setLocalisation($res['localisation']);
+			$restaurant->setPhoto($res['photo']);
+			$restaurant->setCapacite($res['capacite']);
+			$restaurant->setAffluence($res['affluence']);
+			$restaurant->setMenu($res['menu']);
+			$restaurant->setWebsite($res['website']);
+			$restaurant->setTelephone($res['telephone']);
+			$restaurant->setKeyword($res['keyword']);
+			$restaurant->setPrixmoyen($res['prix_moyen']);
+			$restaurant->setHoraires($repoHoraire->getHorairesByRestaurant($res['id']));
+			$restaurants->append($restaurant);
+		}
+		$results->closeCursor();
+		
+		return $restaurants;
+	}
 }
