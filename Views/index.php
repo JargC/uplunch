@@ -1,10 +1,3 @@
-<?php
-
-// Chargement de la classe de modele generique
-require('../core/Model.php');
-
-?>
-
 <?php $titre = 'Accueil'; ?>
 
 <?php ob_start(); ?>

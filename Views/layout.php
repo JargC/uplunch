@@ -1,18 +1,6 @@
-<?php
-// Je recupere la saisie dans la session si necessaire
-if(isset($_SESSION['saisie'])){
-    $saisie = $_SESSION['saisie'];
-    var_dump($saisie);
-//    unset($_SESSION['saisie']);
-}
-// Je recupere le tableau des erreurs si necessaire
-if(isset($_SESSION['erreur'])){
-    $erreur = $_SESSION['erreur'];
-    var_dump($erreur);
-//    unset($_SESSION['erreur']);
-}
+<?php 
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,10 +32,18 @@ if(isset($_SESSION['erreur'])){
 							</a>
 						</div>
 						<div class="user-element-container">
+							<?php
+							if(isset($_SESSION['id'])){
+							?>
+							<span><?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></span>
+							<a href="../Controller/deconnectionController.php">log out</a>
+							<?php }
+							else{ ?>
 							<a id="loginButton" onclick="showLoginPanel()" class="logo-user-link">
 								<span class="logo-user">
 								</span>
-							</a>											
+							</a>
+							<?php } ?>											
 						</div>
 						<div class="header-title-container">
 							<span class="header-title">UP-LUNCH</span>					
@@ -67,14 +63,16 @@ if(isset($_SESSION['erreur'])){
    			 <h2 class="panel-title">Connexion</h2>
   			</div>
 	  		<div class="panel-body">
-	    		<form action="../Controller/userController.php?method=connexion" method="post">
+	    		<form action="../Controller/connectionController.php" method="post">
+	    			<a href="../Controller/hybridController.php?provider=Facebook" class="btn btn-default">Se connecter avec Facebook</a>
+	    			<a href="../Controller/hybridController.php?provider=Google" class="btn btn-default">Se connecter avec Google</a>
 					<label style="color:grey"> Adresse e-mail </label>
 					<input class="form-control" type="text" name="mail">
 					<br>
 					<label style="color:grey"> Mot de passe </label>
 					<input class="form-control" type="password" name="password">
 					<br>
-					<input id="inscriptionButton" class="btn btn-default" type="submit" value="Se connecter">
+					<input id="connectionButton" class="btn btn-default" type="submit" value="Se connecter">
 	    		</form>
 	    		<br>
 	    		<button onclick="showInscriptionPanel()" class="btn btn-default">S'inscrire</button>
@@ -86,7 +84,7 @@ if(isset($_SESSION['erreur'])){
    			 <h2 class="panel-title">Inscription</h2>
   			</div>
 	  		<div class="panel-body">
-	    		<form action="../Controller/userController.php?method=inscription" method="post">
+	    		<form action="../Controller/inscriptionController.php" method="post" enctype="multipart/form-data">
 	    			<label style="color:grey"> Nom </label>
 					<input class="form-control" type="text" name="nom">
 					<label style="color:grey"> Prénom </label>
@@ -96,6 +94,7 @@ if(isset($_SESSION['erreur'])){
 					<label style="color:grey"> Filiere </label>
 					<input class="form-control" type="text" name="filiere">
 					<label style="color:grey"> Photo </label>
+					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 					<input class="form-control" type="file" accept="image/*" name="photo">
 					<label style="color:grey"> Adresse e-mail *</label>
 					<input class="form-control" type="text" name="mail">
