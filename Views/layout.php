@@ -1,11 +1,17 @@
 <?php 
 session_start();
+if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
+	'<script>
+	alert("inscription failed");</script>';
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/x-icon" href=".png" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+	<link rel="stylesheet" href="../Views/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../Views/css/jquery-ui.min.css" type="text/css" />
 	<link rel="stylesheet" href="../Views/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="../Views/css/layoutstyle.css" type="text/css" />
@@ -64,15 +70,18 @@ session_start();
   			</div>
 	  		<div class="panel-body">
 	    		<form action="../Controller/connectionController.php" method="post">
-	    			<a href="../Controller/hybridController.php?provider=Facebook" class="btn btn-default">Se connecter avec Facebook</a>
-	    			<a href="../Controller/hybridController.php?provider=Google" class="btn btn-default">Se connecter avec Google</a>
-					<label style="color:grey"> Adresse e-mail </label>
+					<label style="color:black"> Adresse e-mail </label>
 					<input class="form-control" type="text" name="mail">
 					<br>
-					<label style="color:grey"> Mot de passe </label>
+					<label style="color:black"> Mot de passe </label>
 					<input class="form-control" type="password" name="password">
 					<br>
-					<input id="connectionButton" class="btn btn-default" type="submit" value="Se connecter">
+					<input id="connectionButton" class="btn btn-default" type="submit" value="Se connecter"><br><br>
+					<label style="color:black">Connexion via réseaux sociaux :</label><br>
+					<a href="../Controller/hybridController.php?provider=Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i>acebook</a>
+					&nbsp;
+	    			<a href="../Controller/hybridController.php?provider=Google"><i class="fa fa-google" aria-hidden="true"></i><span style="color:red">o</span><span style="color:yellow">o</span><span style="color:bleu">g</span><span style="color:green">l</span><span style="color:red">e</span></a>
+	    			
 	    		</form>
 	    		<br>
 	    		<button onclick="showInscriptionPanel()" class="btn btn-default">S'inscrire</button>
@@ -85,20 +94,20 @@ session_start();
   			</div>
 	  		<div class="panel-body">
 	    		<form action="../Controller/inscriptionController.php" method="post" enctype="multipart/form-data">
-	    			<label style="color:grey"> Nom </label>
+	    			<label style="color:black"> Nom </label>
 					<input class="form-control" type="text" name="nom">
-					<label style="color:grey"> Prénom </label>
+					<label style="color:black"> Prénom </label>
 					<input class="form-control" type="text" name="prenom">
-					<label style="color:grey"> Adresse </label>
+					<label style="color:black"> Adresse </label>
 					<input class="form-control" type="text" name="adresse">
-					<label style="color:grey"> Filiere </label>
+					<label style="color:black"> Filiere </label>
 					<input class="form-control" type="text" name="filiere">
-					<label style="color:grey"> Photo </label>
+					<label style="color:black"> Photo </label>
 					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 					<input class="form-control" type="file" accept="image/*" name="photo">
-					<label style="color:grey"> Adresse e-mail *</label>
+					<label style="color:black"> Adresse e-mail *</label>
 					<input class="form-control" type="text" name="mail">
-					<label style="color:grey"> Mot de passe *</label>
+					<label style="color:black"> Mot de passe *</label>
 					<input class="form-control" type="password" name="password">
 					<br>
 					<input class="btn btn-default" type="submit" value="S'inscrire">
@@ -106,9 +115,9 @@ session_start();
 	 	    </div>
 		</div>
 		<div class="list-parameter">
-			<div class="element-parameter"><a href="">Retour page d'accueil</a></div>
+			<div class="element-parameter"><a href="../Controller/indexController.php">Retour page d'accueil</a></div>
 			<div class="element-parameter"><a href="">Mes favoris</a></div>
-			<div class="element-parameter"><a href="">Qui sommes nous?</a></div>
+			<div class="element-parameter"><a href="../Controller/indexController.php?request=about">Qui sommes nous?</a></div>
 			<div class="element-parameter"><a href="">Conditions d'utilisations</a></div>
 			<span>Nous contacter</span>
 			<a class="fb-contact" href=""></a>

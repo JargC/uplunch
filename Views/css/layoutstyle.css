@@ -11,6 +11,7 @@ a:hover,a:focus{
 	text-decoration: none;
 }
 
+
 #wrap{
     min-height: 100%;
     height: auto !important;
@@ -21,6 +22,7 @@ a:hover,a:focus{
 	z-index: 2;
 	position: absolute;
 	margin-top: 5%;
+	font-family: Lato;
 }
 
 .header-title-container{
@@ -31,6 +33,7 @@ a:hover,a:focus{
     font-size: 100%;
     background: transparent;
     text-align: center;
+    font-family: Lato;
 }
 
 .header-title{

@@ -9,7 +9,7 @@ include './User.php';
 class UserRepository
 {
 	function inscriptionUser($user){
-		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', 'root');
+		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', '');
 		$req = $bdd->prepare('INSERT INTO user(nom, prenom, mail, password, adresse, date_creation, filiere, photo)
 					  VALUES(:nom, :prenom, :mail, :password, :adresse, CURDATE(), :filiere, :photo)');
 		$req->execute(array(
@@ -23,7 +23,7 @@ class UserRepository
 	}
 	
 	function connectionUser($mail,$password){
-		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', 'root');
+		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', '');
 		$req = $bdd->prepare('SELECT * FROM user 
 							  WHERE mail = :mail AND password = :password');
 		$req->execute(array(

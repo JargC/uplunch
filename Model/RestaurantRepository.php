@@ -9,7 +9,7 @@ class RestaurantRepository
 {
 
 	public function getRestaurantCampus() {
-		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', 'root');
+		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', '');
 		$results = $bdd->query('select * from restaurant where localisation="in" ');
 
 		$restaurants = new \ArrayObject();
