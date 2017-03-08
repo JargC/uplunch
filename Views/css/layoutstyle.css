@@ -5,19 +5,33 @@ html,body {
 body{
 	background: #f1f1f1;
 	color: #FAF4E8;
+	font-family: Lato,arial,sans-serif;
 }
 
 a:hover,a:focus{
 	text-decoration: none;
 }
-
+ table{
+ 	color: black;
+ }
 
 #wrap{
     min-height: 100%;
     height: auto !important;
-    margin: 100px auto -145px;   
+    margin: 100px auto -240px;   
 }
 
+.admin-panel{
+	color: black;
+	width: 20%;
+	margin: 100px 20px auto;
+	display: inline-block;
+}
+
+.manage-panel{
+	margin: 15px 15px 15px 15px;
+	display: inline-block;
+}
 .login-panel{
 	z-index: 2;
 	position: absolute;
@@ -112,7 +126,7 @@ a:hover,a:focus{
 	border-bottom: 1px solid #e8e8e8;
 	background-color: #C55D2F;	
 	text-align: center;
-	font: 13px arial,sans-serif;
+	font: 13px Lato,arial,sans-serif;
 	font-weight:bold;
 	text-decoration: none;
 }
@@ -160,12 +174,12 @@ a:hover,a:focus{
 }
 
 .bottom-footer-container-primary{
-	font: 13px arial,sans-serif;
+	font: 13px Lato,arial,sans-serif;
 	margin-bottom: 8px;
 }
 
 .bottom-footer-container-secondary{
-	font: 11px arial,sans-serif;
+	font: 11px Lato,arial,sans-serif;
 }
 
 .link-footer{
@@ -176,7 +190,7 @@ a:hover,a:focus{
 }
 
 .in-container{
-	font: 18px arial,sans-serif;
+	font: 18px Lato,arial,sans-serif;
 	background: #F2A079;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -184,11 +198,12 @@ a:hover,a:focus{
     min-width:750px;
     min-height:300px;
     margin-bottom: 10px;
+    margin-top: 30px;
     display: flex;
 }
 
 .out-container{
-	font: 18px arial,sans-serif;
+	font: 18px Lato,arial,sans-serif;
 	background: #C8E1B8;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -200,7 +215,7 @@ a:hover,a:focus{
 }
 
 .in-list-container{
-	font: 18px arial,sans-serif;
+	font: 18px Lato,arial,sans-serif;
 	background: #F2A079;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -211,7 +226,7 @@ a:hover,a:focus{
 }
 
 .out-list-container{
-	font: 18px arial,sans-serif;
+	font: 18px Lato,arial,sans-serif;
 	background: #C8E1B8;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;

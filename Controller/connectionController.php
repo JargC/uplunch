@@ -29,4 +29,10 @@ else {
 	echo 'Identification impossible';
 }
 
-header("Location: ./indexController.php");
+if(isset($_SESSION['mail']) && $_SESSION['mail'] == "admin@uplunch.fr"){
+	$_SESSION['admin']="yes";
+	header("Location: ../Controller/administrationController.php");
+}
+else {
+	header("Location: ./indexController.php");
+}

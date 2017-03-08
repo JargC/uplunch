@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(!isset($_SESSION)) {
+     session_start();
+}
 if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 	'<script>
 	alert("inscription failed");</script>';
@@ -31,7 +33,9 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 			<div class="header-container">
 				<div class="top-header-container">
 					<div class="element-top-header-container">
-						<div class="logo-container">
+						<div class="logo-container" <?php
+					if(isset($_SESSION['admin'])) echo 'style="visibility:hidden";'
+					?>>
 							<a class="logo-parameter-link">	
 								<span class="logo-parameter">
 								</span>
@@ -57,8 +61,15 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 					</div>
 				</div>				
 				<div class="nav-container">
+					<?php
+					if(isset($_SESSION['admin'])){
+					?>
+					<h3>Interface d'administration</h3>
+					<?php }
+					else {?>
 					<a href="../Controller/indexController.php" class="link-nav"><span>Accueil</span></a>
-					<a href="favoris.php" class="link-nav"><span>Favoris</span></a>					
+					<a href="favoris.php" class="link-nav"><span>Favoris</span></a>
+					<?php } ?>					
 				</div>
 			</div>
 		</div>
@@ -114,6 +125,9 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 	    		</form>
 	 	    </div>
 		</div>
+		<?php
+		if(!isset($_SESSION['admin'])){
+		?>
 		<div class="list-parameter">
 			<div class="element-parameter"><a href="../Controller/indexController.php">Retour page d'accueil</a></div>
 			<div class="element-parameter"><a href="">Mes favoris</a></div>
@@ -123,7 +137,7 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 			<a class="fb-contact" href=""></a>
 			<a class="gm-contact" href=""></a>
 		</div>
-		
+		<?php } ?>
 		<!-- Content -->
 		
 		<div class="container">

@@ -7,7 +7,7 @@ use Model\Horaire;
 class HoraireRepository
 {
 	public function getHorairesByRestaurant($id){
-		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', 'root');
+		$bdd = new \PDO('mysql:host=127.0.0.1;dbname=uplunch;charset=utf8', 'root', '');
 		$results = $bdd->prepare('select * from horaire where id_restaurant = :id ');
 		$results->execute(array('id' => $id));
 		$horaires = new \ArrayObject();
