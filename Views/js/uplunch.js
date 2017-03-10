@@ -56,3 +56,9 @@ $(document).ready(function(){
 		}
 	});
 });
+
+function ChangeImg(){
+	var imge = document.getElementById('img-coeur-vide'); 
+	imge.src = "../Views/css/images/heart.svg"; 
+	imge.removeAttribute("onclick");
+}

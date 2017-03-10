@@ -23,16 +23,19 @@ if($user->getId() != null){
 	$_SESSION['adresse']=$user->getAdresse();
 	$_SESSION['filiere']=$user->getFiliere();
 	$_SESSION['photo']=$user->getPhoto();
-}
+	$_SESSION['id_restaurant']=$user->getIdRestaurant();
+	$_SESSION['date_restaurant']=$user->getDateRestaurant();
 
-else {
-	echo 'Identification impossible';
-}
-
-if(isset($_SESSION['mail']) && $_SESSION['mail'] == "admin@uplunch.fr"){
+	if(isset($_SESSION['mail']) && $_SESSION['mail'] == "admin@uplunch.fr"){
 	$_SESSION['admin']="yes";
 	header("Location: ../Controller/administrationController.php");
+	}
+	else {
+	header("Location: ./indexController.php");
+	}
 }
 else {
-	header("Location: ./indexController.php");
+	header("Location: ./indexController.php?connection=failed");
 }
+
+

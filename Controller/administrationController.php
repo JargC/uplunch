@@ -50,7 +50,7 @@ if(isset($_GET['manage']) && isset($_GET['type'])){
 			$restaurant->setWebsite($_POST['website']);
 			$restaurant->setTelephone($_POST['telephone']);
 			$restaurant->setKeyword($_POST['keyword']);
-			$restaurant->setPrixmoyen($_POST['prixmoyen']);
+			$restaurant->setRupture($_POST['rupture']);
 			$restauRepo->addRestaurant($restaurant);
 		}
 

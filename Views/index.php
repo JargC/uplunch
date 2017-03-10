@@ -14,7 +14,7 @@
 		</a>
 	</div>
 	<div class="out-container">
-		<a href="" class="out-link">Déjeuner aux alentours
+		<a href="../Controller/restaurantController.php" class="out-link">Déjeuner aux alentours
 		</a>
 	</div>';	
 $contenu = ob_get_clean();

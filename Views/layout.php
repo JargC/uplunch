@@ -1,10 +1,14 @@
-<?php 
+<?php
 if(!isset($_SESSION)) {
-     session_start();
+	session_start();
 }
 if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
-	'<script>
+'<script>
 	alert("inscription failed");</script>';
+}
+if(isset($_GET['connection']) && $_GET['connection'] == 'failed'){echo
+'<script>
+	alert("connection failed");</script>';
 }
 ?>
 <!DOCTYPE html>
@@ -17,6 +21,7 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 	<link rel="stylesheet" href="../Views/css/jquery-ui.min.css" type="text/css" />
 	<link rel="stylesheet" href="../Views/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="../Views/css/layoutstyle.css" type="text/css" />
+	<link rel="stylesheet" href="../Views/css/uplunch.css" type="text/css" />
 	<script src="../Views/js/jquery-ui.min.js" ></script>
 	<script src="../Views/js/jquery-1.12.1.min.js" ></script>	
 	<script src="../Views/js/bootstrap.min.js" ></script>
@@ -69,7 +74,7 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 					else {?>
 					<a href="../Controller/indexController.php" class="link-nav"><span>Accueil</span></a>
 					<a href="favoris.php" class="link-nav"><span>Favoris</span></a>
-					<?php } ?>					
+					<?php } ?>						
 				</div>
 			</div>
 		</div>
@@ -105,29 +110,26 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
   			</div>
 	  		<div class="panel-body">
 	    		<form action="../Controller/inscriptionController.php" method="post" enctype="multipart/form-data">
-	    			<label style="color:black"> Nom </label>
+	    			<label style="color:grey"> Nom </label>
 					<input class="form-control" type="text" name="nom">
-					<label style="color:black"> Prénom </label>
+					<label style="color:grey"> Prénom </label>
 					<input class="form-control" type="text" name="prenom">
-					<label style="color:black"> Adresse </label>
+					<label style="color:grey"> Adresse </label>
 					<input class="form-control" type="text" name="adresse">
-					<label style="color:black"> Filiere </label>
+					<label style="color:grey"> Filiere </label>
 					<input class="form-control" type="text" name="filiere">
-					<label style="color:black"> Photo </label>
+					<label style="color:grey"> Photo </label>
 					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 					<input class="form-control" type="file" accept="image/*" name="photo">
-					<label style="color:black"> Adresse e-mail *</label>
+					<label style="color:grey"> Adresse e-mail *</label>
 					<input class="form-control" type="text" name="mail">
-					<label style="color:black"> Mot de passe *</label>
+					<label style="color:grey"> Mot de passe *</label>
 					<input class="form-control" type="password" name="password">
 					<br>
 					<input class="btn btn-default" type="submit" value="S'inscrire">
 	    		</form>
 	 	    </div>
 		</div>
-		<?php
-		if(!isset($_SESSION['admin'])){
-		?>
 		<div class="list-parameter">
 			<div class="element-parameter"><a href="../Controller/indexController.php">Retour page d'accueil</a></div>
 			<div class="element-parameter"><a href="">Mes favoris</a></div>
@@ -137,7 +139,7 @@ if(isset($_GET['inscription']) && $_GET['inscription'] == 'failed'){echo
 			<a class="fb-contact" href=""></a>
 			<a class="gm-contact" href=""></a>
 		</div>
-		<?php } ?>
+		
 		<!-- Content -->
 		
 		<div class="container">

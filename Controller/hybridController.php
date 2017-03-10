@@ -20,7 +20,7 @@ if(isset($_REQUEST["provider"]))
 		//On  affecte le provider
 		$provider = @ trim( strip_tags( $_GET["provider"] ) );
 		// On tente une authentification
-		$adapter = $hybridauth->authenticate( $provider );
+		$adapter = $hybridauth->authenticate( $_GET["provider"] );
 		$adapter = $hybridauth->getAdapter( $provider );
 		//On récupère les informations du profile
 		$user_data = $adapter->getUserProfile();
@@ -28,9 +28,26 @@ if(isset($_REQUEST["provider"]))
 		 On interroge notre base de données pour voir si l'adresse email($user_data->email) est déjà attachée à un compte*/
 		$user = new User();
 		$userRepository = new UserRepository();
-		$user = $userRepository->connectionUser($user_data->email, sha1($user_data->email));
-		if($user->getId() != null){//Si le compte existe on authentifie	
+		$user = $userRepository->connectionUser($user_data->email, $user_data->email);
+		
+		if($user->getId() == null){//Si le compte n'existe pas on enregistre l'utilisateur	
 			//Création des variables de session
+			$user->setNom($user_data->lastName);
+			$user->setPrenom($user_data->firstName);
+			$user->setMail($user_data->email);
+			$user->setPassword($user_data->email);
+			$user->setAdresse("Non inscrit");
+			$user->setFiliere("Non inscrit");
+			$user->setPhoto($user_data->photoURL);
+				
+			$userRepository->inscriptionUser($user);
+			
+			if($_GET["provider"]==="Facebook")header("Location: ./hybridController.php?provider=Facebook");
+			else header("Location: ./hybridController.php?provider=Google");
+			
+		}
+		else{	
+			// on athentifie l'utilisateur
 			session_start();
 			
 			$_SESSION['id']=$user->getId();
@@ -40,19 +57,8 @@ if(isset($_REQUEST["provider"]))
 			$_SESSION['adresse']=$user->getAdresse();
 			$_SESSION['filiere']=$user->getFiliere();
 			$_SESSION['photo']=$user->getPhoto();
-			
-			header("Location: ./indexController.php");
-		}
-		else{
-			$user->setNom($user_data->lastName);
-			$user->setPrenom($user_data->firstName);
-			$user->setMail($user_data->email);
-			$user->setPassword(sha1($user_data->email));
-			$user->setAdresse("Non inscrit");
-			$user->setFiliere("Non inscrit");
-			$user->setPhoto($user_data->photoURL);
-			
-			$userRepository->inscriptionUser($user);
+			$_SESSION['id_restaurant']=$user->getIdRestaurant();
+			$_SESSION['date_restaurant']=$user->getDateRestaurant();
 			
 			header("Location: ./indexController.php");
 		}

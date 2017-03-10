@@ -1,0 +1,346 @@
+html,body {
+    height: 100%;   
+}
+
+body{
+	background: #f1f1f1;
+	color: #FAF4E8;
+	font-family: Lato,arial,sans-serif;
+}
+
+a:hover,a:focus{
+	text-decoration: none;
+}
+ table{
+ 	color: black;
+ }
+
+#wrap{
+    min-height: 100%;
+    height: auto !important;
+    margin: 100px auto -240px;   
+}
+
+.admin-panel{
+	color: black;
+	width: 20%;
+	margin: 100px 20px auto;
+	display: inline-block;
+}
+
+.manage-panel{
+	margin: 15px 15px 15px 15px;
+	display: inline-block;
+}
+.login-panel{
+	z-index: 2;
+	position: absolute;
+	margin-top: 5%;
+	font-family: Lato;
+}
+
+.header-title-container{
+	overflow: hidden;
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    background: transparent;
+    text-align: center;
+    font-family: Lato;
+}
+
+.header-title{
+	font-size: x-large;
+    margin-right: 118px;
+}
+
+.header-container{
+	min-width: 850px;
+	margin-bottom: 10px;
+	position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1999999999;
+}
+
+.top-header-container{
+	min-width: 0;
+	padding:7px 30px 8px 30px;
+    position: relative;
+	height: 50px;
+	border-bottom: 1px solid #e8e8e8;
+	background-color: #C55D2F;
+}
+
+.element-top-header-container{
+	font-size: 100%;
+}
+
+.logo-container{
+	float: left;
+    margin-top: 3px;
+    position: relative;
+    width: 200px;
+}
+
+.logo-parameter-link,.logo-uplunch-link,.logo-user-link{
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logo-parameter,.logo-uplunch,.logo-user{
+	background-size: auto;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.logo-parameter{
+	background : no-repeat url("./images/logo-parameter.png") ;
+}
+
+.logo-uplunch{
+	background : no-repeat url("./images/logo-uplunch.png") ;
+	width: 72px;
+}
+
+.logo-user{
+	background : no-repeat url("./images/logo-user.png") ;
+}
+
+.user-element-container{
+	color: #FAF4E8;
+    float: right;
+    margin-left: 50px;
+    margin-top: 3px;
+}
+
+.nav-container{
+	height: 40px;
+	border-bottom: 1px solid #e8e8e8;
+	background-color: #C55D2F;	
+	text-align: center;
+	font: 13px Lato,arial,sans-serif;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.footer{
+	height: auto !important;
+	margin: 100px auto -145px;
+}
+
+.footer-container{
+	height: 145px;
+	background-color: #C55D2F;
+	border-top: 1px solid #e2e2e2;
+	padding: 15px 30px;
+}
+
+.link-nav{
+	display: inline-block;
+    padding: 13px 15px;
+    color: #FAF4E8;
+}
+
+.link-nav:hover{
+	display: inline-block;
+    padding: 13px 15px 8px 15px;
+    text-decoration: none;
+    border-bottom: 3px solid #FAF4E8;
+    color: #FAF4E8;
+}
+
+.link-nav:focus{
+	display: inline-block;
+    padding: 13px 15px 8px 15px;
+    text-decoration: none;
+    color: #FAF4E8;
+}
+
+.top-footer-container{
+	border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 15px;
+}
+
+.bottom-footer-container{
+	padding: 15px 8px;
+}
+
+.bottom-footer-container-primary{
+	font: 13px Lato,arial,sans-serif;
+	margin-bottom: 8px;
+}
+
+.bottom-footer-container-secondary{
+	font: 11px Lato,arial,sans-serif;
+}
+
+.link-footer{
+	display: inline-block;
+	margin-right: 15px;	
+	text-decoration: none;
+	color: #FAF4E8;
+}
+
+.in-container{
+	font: 18px Lato,arial,sans-serif;
+	background: #F2A079;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width:750px;
+    min-height:300px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.out-container{
+	font: 18px Lato,arial,sans-serif;
+	background: #C8E1B8;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width:750px;
+    min-height:300px;
+    margin-bottom: 195px;
+    display: flex;
+}
+
+.in-list-container{
+	font: 18px Lato,arial,sans-serif;
+	background: #F2A079;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width:750px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.out-list-container{
+	font: 18px Lato,arial,sans-serif;
+	background: #C8E1B8;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width:750px;
+    margin-bottom: 195px;
+    display: flex;
+}
+
+.in-link{
+	margin: auto;
+	background: #ED7F3D;
+	color:#f1f1f1;
+	padding: 68px 18px;
+	box-shadow: 4px 4px 0px #aaa; 
+	border-radius:33px; 
+}
+
+.out-link{
+	margin: auto;
+	background: #558139;
+	color:#f1f1f1;
+	padding: 68px 18px;
+	box-shadow: 4px 4px 0px #aaa; 
+	border-radius:33px;
+}
+
+.list-parameter{
+	margin-top: -10px;
+    width: 200px;
+    height: 180px;
+    background-color: #C55D2F;
+    position:absolute;
+    padding-top: 10px;
+    text-align: center;
+    display:none;
+}
+
+.element-parameter{
+	background-color: #833C1C;
+	text-align: center;
+	margin-bottom: 4px;
+	
+}
+
+.fb-contact{
+	background : no-repeat url("./images/logo-fb.png") ;
+	display: block;
+	position: absolute;
+	height: 32px;
+    width: 32px;
+    margin-top: 9px;
+    margin-left: 52px;
+}
+
+.gm-contact{
+	background : no-repeat url("./images/logo-gmail.png") ;
+	display:block;
+	position: absolute;
+	height: 32px;
+    width: 42px;
+    margin-top: 8px;
+    margin-left: 110px;
+}
+
+.search-container{
+	
+}
+
+.path{
+	
+}
+
+.list-restaurant-container{
+	padding: 26px 26px 16px 26px;
+}
+
+.restaurant-container{
+	background-color: white;
+	color:black;
+	margin-bottom: 10px;
+	border-radius: 32px;
+}
+
+.picture{
+	width: 266px;
+    margin: 30px;
+}
+
+.description-restaurant{
+	display: inline-block;
+    vertical-align: top;
+    font-size: x-large;
+    margin-top: 34px;
+}
+
+.restaurant-name{
+	
+}
+
+.horaire{
+	
+}
+
+.restaurant-keyword{
+	
+}
+
+.go-validation{
+	background-color: #C55D2F ;
+	margin-left: 42px;
+    margin-right: 20px;
+}
+
+.restaurant-affluence{
+	
+}

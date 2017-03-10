@@ -20,7 +20,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']=="yes")
 			  <!-- Table -->
 			  <table class="table table-striped" style="table-layout:fixed;width:100%;">
 			    <thead>
-					<tr><th> # </th><th> Nom </th><th> Adresse </th><th> Localisation </th><th> Photo </th><th> Capacité </th><th>Affluence</th><th>Menu</th><th>Site web</th><th>Telephone</th><th>Mots clés</th><th>Prix moyen</th><th>Horaires</th><th>Modifier</th><th>Supprimer</th></tr>';
+					<tr><th> # </th><th> Nom </th><th> Adresse </th><th> Localisation </th><th> Photo </th><th> Capacité </th><th>Affluence</th><th>Menu</th><th>Site web</th><th>Telephone</th><th>Mots clés</th><th>Rupture</th><th>Horaires</th><!--<th>Modifier</th>--><th>Supprimer</th></tr>';
 					if(isset($_GET['req']) && $_GET['req'] == "add")
 					{
 						echo '<form method="post" action="./administrationController.php?manage=restaurants&type=add">
@@ -36,7 +36,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']=="yes")
 									<td><input class="form-control" type="text" name="website"></td>
 									<td><input class="form-control" type="text" name="telephone"></td>
 									<td><input class="form-control" type="text" name="keyword"></td>
-									<td><input class="form-control" type="text" name="prixmoyen"></td>
+									<td><input class="form-control" type="text" name="rupture"></td>
 									<td><!--<input class="form-control" type="text" name="horairedebut">--></td>
 									<td><input class="btn btn-default" type="submit" name="" value="Ajouter"></td>
 								</tr>
@@ -47,7 +47,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']=="yes")
 						$horaires = $restaurant->getHoraires();
 						if(empty($horaires[0])){$horaire_debut = '';$horaire_fin = '';}
 						else{$horaire_debut = $horaires[0]->getDebut(); $horaire_fin = $horaires[0]->getFin();}
-						echo '<tr><td>'.$restaurant->getId().'</td><td>'.$restaurant->getNom().'</td><td>'.$restaurant->getAdresse().'</td><td>'.$restaurant->getLocalisation().'</td><td>'.$restaurant->getPhoto().'</td><td>'.$restaurant->getCapacite().'</td><td>'.$restaurant->getAffluence().'</td><td>'.$restaurant->getMenu().'</td><td>'.$restaurant->getWebsite().'</td><td>'.$restaurant->getTelephone().'</td><td>'.$restaurant->getKeyword().'</td><td>'.$restaurant->getPrixmoyen().'</td><td>'.$horaire_debut.'-'.$horaire_fin.'</td><td><a href="../Controller/administrationController.php?manage=restaurants&type=update&num='.$restaurant->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/modif.png"/></a></td><td><a href="../Controller/administrationController.php?manage=restaurants&type=delete&num='.$restaurant->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/delete.png"/></a></td></td>';
+						echo '<tr><td>'.$restaurant->getId().'</td><td>'.$restaurant->getNom().'</td><td>'.$restaurant->getAdresse().'</td><td>'.$restaurant->getLocalisation().'</td><td>'.$restaurant->getPhoto().'</td><td>'.$restaurant->getCapacite().'</td><td>'.$restaurant->getAffluence().'</td><td>'.$restaurant->getMenu().'</td><td>'.$restaurant->getWebsite().'</td><td>'.$restaurant->getTelephone().'</td><td>'.$restaurant->getKeyword().'</td><td>'.$restaurant->getRupture().'</td><td>'.$horaire_debut.'-'.$horaire_fin.'</td><!--<td><a href="../Controller/administrationController.php?manage=restaurants&type=update&num='.$restaurant->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/modif.png"/></a>--></td><td><a href="../Controller/administrationController.php?manage=restaurants&type=delete&num='.$restaurant->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/delete.png"/></a></td></td>';
 					}
 					echo '
 				</thead>
@@ -62,7 +62,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']=="yes")
 			  <!-- Table -->
 			  <table class="table table-striped">
 			    <thead>
-					<tr><th> # </th><th> Nom </th><th> Prénom </th><th> Mail </th><th> Adresse </th><th> Date création </th> <th>Filiere</th><th>Photo</th><th>Modifier</th><th>Supprimer</th></tr>';
+					<tr><th> # </th><th> Nom </th><th> Prénom </th><th> Mail </th><th> Adresse </th><th> Date création </th> <th>Filiere</th><th>Photo</th><!--<th>Modifier</th>--><th>Supprimer</th></tr>';
 					// if(isset($_GET['req']) && $_GET['req'] == "add")
 					// {
 					// 	echo '<form method="post" action="./administrationController.php?manage=users&type=add">
@@ -81,7 +81,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']=="yes")
 					// }
 					$users = $userRepo->getUsers();
 					foreach ($users as $user) {
-						echo '<tr><td>'.$user->getId().'</td><td>'.$user->getNom().'</td><td>'.$user->getPrenom().'</td><td>'.$user->getMail().'</td><td>'.$user->getAdresse().'</td><td>'.$user->getCreationDate().'</td><td>'.$user->getFiliere().'</td><td>'.$user->getPhoto().'</td><td><a href="../Controller/administrationController.php?manage=users&type=update&num='.$user->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/modif.png"/></a></td><td><a href="../Controller/administrationController.php?manage=users&type=delete&num='.$user->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/delete.png"/></a></td></td>';
+						echo '<tr><td>'.$user->getId().'</td><td>'.$user->getNom().'</td><td>'.$user->getPrenom().'</td><td>'.$user->getMail().'</td><td>'.$user->getAdresse().'</td><td>'.$user->getCreationDate().'</td><td>'.$user->getFiliere().'</td><td>'.$user->getPhoto().'</td><!--<td><a href="../Controller/administrationController.php?manage=users&type=update&num='.$user->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/modif.png"/></a></td>--><td><a href="../Controller/administrationController.php?manage=users&type=delete&num='.$user->getId().'"><img style="width:20px; height:20px;" src="../Views/css/images/delete.png"/></a></td></td>';
 					}
 					echo '
 				</thead>

@@ -15,6 +15,8 @@ class User
 	private $creation_date;
 	private $filiere;
 	private $photo;
+	private $id_restaurant;
+	private $date_restaurant;
 	
 	public function getId() {
 		return $this->id;
@@ -93,6 +95,21 @@ class User
 		$this->photo = $photo;
 		return $this;
 	}
+	public function getIdRestaurant() {
+		return $this->id_restaurant;
+	}
+	public function setIdRestaurant($id_restaurant) {
+		$this->id_restaurant = $id_restaurant;
+		return $this;
+	}
+	public function getDateRestaurant() {
+		return $this->date_restaurant;
+	}
+	public function setDateRestaurant($date_restaurant) {
+		$this->date_restaurant = $date_restaurant;
+		return $this;
+	}
+	
 	
 
 }

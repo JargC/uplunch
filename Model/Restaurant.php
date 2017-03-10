@@ -14,8 +14,8 @@ class Restaurant
 	private $menu;	
 	private $website;	
 	private $telephone;	
-	private $keyword;	
-	private $prixmoyen;
+	private $keyword;
+	private $rupture;	
 	private $horaires;
 	
 	public function setId($id){
@@ -95,11 +95,11 @@ class Restaurant
 		$this->keyword = $keyword;
 		return $this;
 	}
-	public function getPrixmoyen() {
-		return $this->prixmoyen;
+	public function getRupture() {
+		return $this->rupture;
 	}
-	public function setPrixmoyen($prixmoyen) {
-		$this->prixmoyen = $prixmoyen;
+	public function setRupture($rupture) {
+		$this->rupture = $rupture;
 		return $this;
 	}
 	public function getHoraires() {

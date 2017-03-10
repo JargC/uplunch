@@ -5,38 +5,22 @@ html,body {
 body{
 	background: #f1f1f1;
 	color: #FAF4E8;
-	font-family: Lato,arial,sans-serif;
 }
 
 a:hover,a:focus{
 	text-decoration: none;
 }
- table{
- 	color: black;
- }
 
 #wrap{
     min-height: 100%;
     height: auto !important;
-    margin: 100px auto -240px;   
+    margin: 100px auto -145px;   
 }
 
-.admin-panel{
-	color: black;
-	width: 20%;
-	margin: 100px 20px auto;
-	display: inline-block;
-}
-
-.manage-panel{
-	margin: 15px 15px 15px 15px;
-	display: inline-block;
-}
 .login-panel{
 	z-index: 2;
 	position: absolute;
 	margin-top: 5%;
-	font-family: Lato;
 }
 
 .header-title-container{
@@ -47,7 +31,6 @@ a:hover,a:focus{
     font-size: 100%;
     background: transparent;
     text-align: center;
-    font-family: Lato;
 }
 
 .header-title{
@@ -126,7 +109,7 @@ a:hover,a:focus{
 	border-bottom: 1px solid #e8e8e8;
 	background-color: #C55D2F;	
 	text-align: center;
-	font: 13px Lato,arial,sans-serif;
+	font: 13px arial,sans-serif;
 	font-weight:bold;
 	text-decoration: none;
 }
@@ -174,12 +157,12 @@ a:hover,a:focus{
 }
 
 .bottom-footer-container-primary{
-	font: 13px Lato,arial,sans-serif;
+	font: 13px arial,sans-serif;
 	margin-bottom: 8px;
 }
 
 .bottom-footer-container-secondary{
-	font: 11px Lato,arial,sans-serif;
+	font: 11px arial,sans-serif;
 }
 
 .link-footer{
@@ -190,7 +173,7 @@ a:hover,a:focus{
 }
 
 .in-container{
-	font: 18px Lato,arial,sans-serif;
+	font: 18px arial,sans-serif;
 	background: #F2A079;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -198,12 +181,11 @@ a:hover,a:focus{
     min-width:750px;
     min-height:300px;
     margin-bottom: 10px;
-    margin-top: 30px;
     display: flex;
 }
 
 .out-container{
-	font: 18px Lato,arial,sans-serif;
+	font: 18px arial,sans-serif;
 	background: #C8E1B8;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -215,7 +197,7 @@ a:hover,a:focus{
 }
 
 .in-list-container{
-	font: 18px Lato,arial,sans-serif;
+	font: 18px arial,sans-serif;
 	background: #F2A079;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -226,7 +208,7 @@ a:hover,a:focus{
 }
 
 .out-list-container{
-	font: 18px Lato,arial,sans-serif;
+	font: 18px arial,sans-serif;
 	background: #C8E1B8;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing: border-box;
@@ -302,6 +284,7 @@ a:hover,a:focus{
 
 .list-restaurant-container{
 	padding: 26px 26px 16px 26px;
+	
 }
 
 .restaurant-container{
@@ -321,6 +304,7 @@ a:hover,a:focus{
     vertical-align: top;
     font-size: x-large;
     margin-top: 34px;
+    width: 330px;
 }
 
 .restaurant-name{
@@ -335,7 +319,7 @@ a:hover,a:focus{
 	
 }
 
-.go-validation{
+.go{
 	background-color: #C55D2F ;
 	margin-left: 42px;
     margin-right: 20px;
@@ -343,4 +327,32 @@ a:hover,a:focus{
 
 .restaurant-affluence{
 	
+}
+
+.favoris-logo{
+	display: inline-block;
+    float: right;
+    width: 30px;
+    background : no-repeat url("./images/coeur.png") ;
+    margin-right: 20px;
+}
+
+.nofavoris-logo{
+	display: inline-block;
+    float: right;
+    width: 30px;
+    background : no-repeat url("./images/coeur-vide.png") ;
+}
+
+.basic{
+	margin-left: 50px;
+	margin-top: 10px;
+}
+
+.restaurant-container-description{
+	background-color: white;
+	color:black;
+	margin-bottom: 10px;
+	border-radius: 32px;
+	padding : 20px;
 }
